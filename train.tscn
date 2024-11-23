@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cms1xtdj8ewux"]
+
+[ext_resource type="PackedScene" uid="uid://clhd01aslsayt" path="res://scenes/main.tscn" id="1_4xgbx"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="2_2nhcl"]
+
+[node name="Train" type="Node2D"]
+
+[node name="Main" parent="." instance=ExtResource("1_4xgbx")]
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_2nhcl")
+control_mode = 0
+action_repeat = 1
+speed_up = 10.0
+onnx_model_path = "model.onnx"

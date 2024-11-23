@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://clhd01aslsayt"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_bnrxi"]
+[ext_resource type="Script" path="res://scenes/player1.gd" id="2_ooo1g"]
+[ext_resource type="Script" path="res://scenes/player2.gd" id="3_8k8aa"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_bnrxi")
+
+[node name="player1" type="Node2D" parent="."]
+
+[node name="AIController2D" type="Node2D" parent="player1" groups=["AGENT"]]
+script = ExtResource("2_ooo1g")
+onnx_model_path = "modelv3.onnx"
+reset_after = 200
+
+[node name="player2" type="Node2D" parent="."]
+
+[node name="AIController2D" type="Node2D" parent="player2" groups=["AGENT"]]
+script = ExtResource("3_8k8aa")
+onnx_model_path = "ppo_selfplay.onnx"
+reset_after = 200
